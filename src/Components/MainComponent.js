@@ -17,7 +17,6 @@ function handleName(){
     let nameSlice = document.getElementById("pkmName").innerText.slice(0, index-1)
     saveLS(nameSlice);
 }
-
 async function randomGen(){
     const randInt = Math.floor(Math.random() * 651);
     console.log(randInt)

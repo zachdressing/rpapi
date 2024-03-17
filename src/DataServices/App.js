@@ -1,15 +1,16 @@
+let monData, dexData, locData, evoData;
 const getData = async (value) => {
     const monPromise = await fetch(`https://pokeapi.co/api/v2/pokemon/${value}`);
-    let monData = await monPromise.json();
+    monData = await monPromise.json();
 
     const dexPromise = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${value}`);
-    let dexData = await dexPromise.json();
+    dexData = await dexPromise.json();
 
     const locPromise = await fetch(`https://pokeapi.co/api/v2/pokemon/${value}/encounters`);
-    let locData = await locPromise.json();
+    locData = await locPromise.json();
 
     const evoPromise = await fetch(`${dexData.evolution_chain.url}`);
-    let evoData = await evoPromise.json();
+    evoData = await evoPromise.json();
 
     let typeArray = [];
     let abiArray = [];
