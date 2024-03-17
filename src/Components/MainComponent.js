@@ -1,14 +1,22 @@
 import React, { useState } from 'react'
 import pokeAPIImg from '../Assets/pokeAPI.png'
 import Empty from '../Assets/Empty.png'
-import { getData } from '../DataServices/APICall'
+import { getData } from '../DataServices/App.js'
+import { saveLS, getLS, removeLS, genList } from '../DataServices/LocalStorage'
+import { Dropdown } from 'flowbite-react';
 
 const MainComponent = () => {
+
 const [searchVal, setsearchVal] = useState('');
 
 function handleChange(e) {
     setsearchVal(e.target.value);
   }
+function handleName(){
+    let index = document.getElementById('pkmName').innerText.indexOf('-');
+    let nameSlice = document.getElementById("pkmName").innerText.slice(0, index-1)
+    saveLS(nameSlice);
+}
 
 async function randomGen(){
     const randInt = Math.floor(Math.random() * 651);
@@ -16,8 +24,11 @@ async function randomGen(){
     getData(randInt)
 }
 
+
+
+
   return (
-    <div className="bg-bgImg  bg-[#3B4CCA] backdrop-brightness-40 bg-no-repeat bg-center flex justify-center items-start font-mainFont">
+    <div className="bg-bgImg  bg-[#3B4CCA] backdrop-brightness-50 bg-no-repeat bg-center flex justify-center items-start font-mainFont">
       <div id="content" className="container flex flex-col min-h-[98.45vh] items-center mt-5">
         <div className="flex flex-wrap justify-center p-4 w-full lg:gap-x-8 max-w-[1100px]">
           <input className="rounded-full border-4 border-black text-xl w-60" id="searchval" type="text"
@@ -57,7 +68,7 @@ async function randomGen(){
                   className="border-4 border-black rounded-full w-40 md:w-60 mx-auto bg-[#CC0000]">Normal Form
                 </button>
                 <button id="favoriteBtn"
-                  className="border-4 border-black rounded-full w-40 h-8 md:w-60 mx-auto bg-[#B3A125]">
+                  className="border-4 border-black rounded-full w-40 h-8 md:w-60 mx-auto bg-[#B3A125]"  onClick={()=>{handleName()}}>
                   Favorite this Pokemon
                 </button>
               </div>
