@@ -1,8 +1,8 @@
 ## Zachary Dressel
 ## 3/17/24
 ## Recreate Pokemon App in React
-## Peer Reviewer:
-## Peer Review:
+## Peer Reviewer:Leo Garcia
+## Peer Review: Notified ahead of time about shinies being unfunctional, would've preferred the button be grayed out to indicate that. Also an issue when searching for certain Pokemon with odd naming or multiple forms (Mr. Mime, Giratina, Keldeo, etc.), and able to search beyond Unova. Other than that everything's perfectly functional here, including random button and favorites toggle.
 
 # Getting Started with Create React App
 
