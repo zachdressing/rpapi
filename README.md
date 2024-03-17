@@ -1,3 +1,9 @@
+## Zachary Dressel
+## 3/17/24
+## Recreate Pokemon App in React
+## Peer Reviewer:
+## Peer Review:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
